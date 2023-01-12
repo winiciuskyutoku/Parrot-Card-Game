@@ -40,7 +40,7 @@ main {
     height: 250px;
     position: relative;
 
-   /*  margin-right: 30px; */
+    margin-right: 30px;
     margin-bottom: 34px;
 
 }
@@ -65,16 +65,16 @@ main {
 
 }
 
-.traseira {
+.frente {
     transform: rotateY(180deg);
 }
 
-.carta:hover .traseira {
+.frente2 {
     transform: rotateY(0deg);
 }
 
-.carta:hover .frente {
-    transform: rotateY(180deg);
+.traseira {
+    transform: rotateY(-180deg);
 }
 
 /* versao mobile */
