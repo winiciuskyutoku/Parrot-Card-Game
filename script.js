@@ -1,6 +1,6 @@
 let numCartas = Number(prompt("Selecioneo o número de cartas"));
 const cartas = ["bobrossparrot.gif", "explodyparrot.gif", "fiestaparrot.gif", "metalparrot.gif", "revertitparrot.gif", "tripletsparrot.gif", "unicornparrot.gif"];
-const cartasEmbaralhadas = [];
+let cartasEmbaralhadas = [];
 const main = document.querySelector("main");
 
 numeroCartas();
@@ -84,15 +84,41 @@ function virarCarta(selecionado) {
 
     contador++;
 
-    
-    
 }
 
 function vitoria() {
     cartasViradas = document.querySelectorAll('.desabilitarCarta')
     if (cartasViradas.length === cartasEmbaralhadas.length) {
         alert(`Você ganhou em ${contador/2} jogadas!`);
+
+
+        let continuarJogo = prompt("Você gostaria de reiniciar a partida?")
+
+        while(continuarJogo !== "não") {
+            continuarJogo = prompt("Você gostaria de reiniciar a partida?")
+            if (continuarJogo === "sim") {
+                break;
+            }
+            if (continuarJogo === "não"){
+                break;
+            }
+        }
+
+        if (continuarJogo === "não") {
+            
+        } 
+
+        if(continuarJogo === "sim") {
+            numCartas = Number(prompt("Selecioneo o número de cartas"));
+            cartasEmbaralhadas = [];
+            main.innerHTML = '';
+            contador = 0;
+            numeroCartas();
+        }
+
     }
+
+
 }
 
 function primeiraCarta() {
