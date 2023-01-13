@@ -3,6 +3,12 @@ const cartas = ["bobrossparrot.gif", "explodyparrot.gif", "fiestaparrot.gif", "m
 let cartasEmbaralhadas = [];
 const main = document.querySelector("main");
 
+/* let cronometro = 0;
+
+function aumentarCronometro() {
+    cronometro++;
+}
+ */
 numeroCartas();
 
 function numeroCartas() {
@@ -38,7 +44,6 @@ function imprimirCartas() {
             </div>
             `;
     }
-
 }
 
 let cartasGuardadas = [];
@@ -95,13 +100,15 @@ function vitoria() {
         let continuarJogo = prompt("Você gostaria de reiniciar a partida?")
 
         while(continuarJogo !== "não") {
-            continuarJogo = prompt("Você gostaria de reiniciar a partida?")
+            
             if (continuarJogo === "sim") {
                 break;
             }
             if (continuarJogo === "não"){
                 break;
             }
+
+            continuarJogo = prompt("Você gostaria de reiniciar a partida?")
         }
 
         if (continuarJogo === "não") {
