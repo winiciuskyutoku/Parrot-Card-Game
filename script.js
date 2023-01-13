@@ -60,25 +60,39 @@ function virarCarta(selecionado) {
     
     if (contador % 2 === 0) {
         carta1 = frenteCarta;
-
+        carta1.parentNode.removeAttribute("onclick");
+        
     } else {
         carta2 = frenteCarta;
+        carta2.parentNode.removeAttribute("onclick");
         if (carta1.innerHTML === carta2.innerHTML) {
             carta1.parentNode.classList.add('desabilitarCarta');
             carta2.parentNode.classList.add('desabilitarCarta');
+
+
         } else {
             setTimeout(primeiraCarta, 1000);
 
             setTimeout(segundaCarta, 1000);
 
+            carta1.parentNode.setAttribute("onclick", "virarCarta(this)");
+            carta2.parentNode.setAttribute("onclick", "virarCarta(this)");
             
         }
-    }
+        setTimeout(vitoria, 100);
+    } 
 
     contador++;
 
-
     
+    
+}
+
+function vitoria() {
+    cartasViradas = document.querySelectorAll('.desabilitarCarta')
+    if (cartasViradas.length === cartasEmbaralhadas.length) {
+        alert(`Você ganhou em ${contador/2} jogadas!`);
+    }
 }
 
 function primeiraCarta() {
@@ -96,12 +110,7 @@ function segundaCarta() {
     elementoPai2[1].classList.remove('traseira')
 }
 
-/* function vitoria() {
-    cartasViradas = document.querySelectorAll('.desabilitarCarta')
-    if (cartasViradas.length === cartasEmbaralhadas.length) {
-        alert('oi');
-    }
-} */
+
 
 
 /* function mudarCarta(elemento) {
