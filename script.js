@@ -41,10 +41,68 @@ function imprimirCartas() {
 
 }
 
-/* function virarCarta(selecionado) {
+let cartasGuardadas = [];
+
+let carta1, carta2, elementoPai1, elementoPai2, cartasViradas;
+
+let contador = 0;
+
+function virarCarta(selecionado) {
+    let mudarCarta = selecionado.childNodes;
+
+    const frenteCarta = mudarCarta[1];
+    const versoCarta = mudarCarta[3];
+
+    frenteCarta.classList.remove('frente');
+    frenteCarta.classList.add('frente2');
+
+    versoCarta.classList.add('traseira');
+    
+    if (contador % 2 === 0) {
+        carta1 = frenteCarta;
+
+    } else {
+        carta2 = frenteCarta;
+        if (carta1.innerHTML === carta2.innerHTML) {
+            carta1.parentNode.classList.add('desabilitarCarta');
+            carta2.parentNode.classList.add('desabilitarCarta');
+        } else {
+            setTimeout(primeiraCarta, 1000);
+
+            setTimeout(segundaCarta, 1000);
+
+            
+        }
+    }
+
+    contador++;
+
 
     
+}
+
+function primeiraCarta() {
+    elementoPai1 = carta1.parentNode.querySelectorAll('div');
+    elementoPai1[0].classList.remove('frente2');
+    elementoPai1[0].classList.add('frente');
+    elementoPai1[1].classList.remove('traseira')
+
+}
+
+function segundaCarta() {
+    elementoPai2 = carta2.parentNode.querySelectorAll('div');
+    elementoPai2[0].classList.remove('frente2');
+    elementoPai2[0].classList.add('frente');
+    elementoPai2[1].classList.remove('traseira')
+}
+
+/* function vitoria() {
+    cartasViradas = document.querySelectorAll('.desabilitarCarta')
+    if (cartasViradas.length === cartasEmbaralhadas.length) {
+        alert('oi');
+    }
 } */
+
 
 /* function mudarCarta(elemento) {
     elemento.classList.toggle('frente');

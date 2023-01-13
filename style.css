@@ -75,7 +75,17 @@ main {
 
 .traseira {
     transform: rotateY(-180deg);
+
 }
+
+
+/* desabilitar carta */
+
+.desabilitarCarta {
+    filter: saturate(20%);
+    opacity: 0.5;
+}
+
 
 /* versao mobile */
 
