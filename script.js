@@ -44,9 +44,9 @@ function comparador() {
 function imprimirCartas() {
     for (let indice = 0; indice < cartasEmbaralhadas.length; indice++){
         main.innerHTML += `
-            <div class="carta" onclick="virarCarta(this)">
-                <div class="face frente" id="1"><img src="./Cartas/${cartasEmbaralhadas[indice]}" alt=""></div>
-                <div class="face" id="2"><img src="./back.png" alt="atras"></div>
+            <div class="carta" onclick="virarCarta(this)" data-test="card">
+                <div class="face frente" id="1"><img src="./Cartas/${cartasEmbaralhadas[indice]}" alt="" data-test="face-up-image"></div>
+                <div class="face" id="2"><img src="./back.png" alt="atras" data-test="face-down-image"></div>
             </div>
             `;
     }
